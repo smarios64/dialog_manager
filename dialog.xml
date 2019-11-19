@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entry text='text 1'>
+    <entry text='text 2'>
+        <entry text='text 3'>
+            <condition valueName='myInt' valueType='int' targetValue='1'/>
+            <entry text='text 6'>
+            </entry>
+        </entry>
+        <entry text='text 4'>
+            <condition valueName='myInt' valueType='int' targetValue='2'/>
+        </entry>
+        <entry text='text 5'>
+        </entry>
+    </entry>
+</entry>
