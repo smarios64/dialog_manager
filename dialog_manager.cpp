@@ -2,12 +2,20 @@
 #include "dialog_entry.h"
 #include "variable_manager.h"
 
-DialogManager::DialogManager() : m_curDialog(nullptr) { }
+DialogManager::DialogManager() : m_curDialog(nullptr) 
+{
+    CONSOLE_INFO("Instantiating DialogManager [%p]...", this);
+}
+DialogManager::~DialogManager() 
+{
+    reset();
+    CONSOLE_INFO("Destroying DialogManager [%p]...", this);
+}
 
 DialogManager *DialogManager::Instance()
 {
-    DialogManager *instance = new DialogManager();
-    return instance;
+    static DialogManager instance;
+    return &instance;
 }
 
 void DialogManager::parse(const char *xmlFile)

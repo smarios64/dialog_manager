@@ -11,8 +11,8 @@ class VariableManager {
 public:
     static VariableManager *Instance()
     {
-        static VariableManager *instance = new VariableManager();
-        return instance;
+        static VariableManager instance;
+        return &instance;
     }
 
     void registerVariable(const char *name, void *variable)
@@ -39,8 +39,15 @@ public:
     }
 
 private:
-    VariableManager() { }
-
+    VariableManager() 
+    {
+        CONSOLE_INFO("Instantiating VariableManager [%p]...", this);
+    }
+    ~VariableManager()
+    {
+        CONSOLE_INFO("Destroying VariableManager [%p]...", this);
+    }
+    
     std::map<std::string, void*> m_vars;
 };
 

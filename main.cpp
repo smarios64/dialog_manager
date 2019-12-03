@@ -23,8 +23,5 @@ int main(int argc, char **argv)
         i = atoi(input.c_str());
         temp = de->advance();
     }
-    de->reset();
-    delete de;
-    delete ve;
     return 0;
 }

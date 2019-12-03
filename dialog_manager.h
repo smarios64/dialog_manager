@@ -19,6 +19,7 @@ public:
 
 private:
     DialogManager();
+    ~DialogManager();
     DialogEntry *parseNode(xmlNode *node);
 
     DialogEntry *m_curDialog;
